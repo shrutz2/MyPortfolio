@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @font-face {
-    font-family: 'MonoLisa';
-    src: url('/fonts/MonoLisa-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
-}
-
 @layer utilities {
   .animate-bounce-slow {
     animation: bounce 3s infinite;
@@ -18,10 +9,6 @@
   
   .animate-text-reveal {
     animation: textReveal 2s ease-out;
-  }
-
-  .font-mono {
-    font-family: 'MonoLisa', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   }
 }
 

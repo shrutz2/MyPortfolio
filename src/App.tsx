@@ -3,6 +3,8 @@ import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 import NavBar from './components/NavBar';
 import ContactForm from './components/ContactForm';
 import ScrollIndicator from './components/ScrollIndicator';
+import TypedText from './components/TypedText';
+import { getShrituImageUrl } from './utils/imageHelper';
 
 function App() {
   const projects = [
@@ -35,18 +37,14 @@ function App() {
         <div className="flex flex-col md:flex-row items-center justify-between w-full">
           <div className="md:w-1/2">
             <h1 className="text-5xl font-bold mb-6">
-              <span className="block animate-text-reveal bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
-                Hi, I'm Shruti
-              </span>
+              <span className="block text-purple-900">Hi, I'm Shruti</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              A passionate computer science student exploring AI and backend development
-            </p>
-            <div className="flex gap-4">
-              <a href="#contact" className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition">
+            <TypedText strings={["A ^500passionate ^300computer ^300science ^300graduate\n^500exploring ^300AI ^300and ^300backend ^300development..."]} />
+            <div className="flex gap-4 mt-8">
+              <a href="#contact" className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-900 transition">
                 Get in Touch
               </a>
-              <a href="#projects" className="border border-purple-600 text-purple-600 px-6 py-3 rounded-lg hover:bg-purple-50 transition">
+              <a href="#projects" className="border border-purple-900 text-purple-900 px-6 py-3 rounded-lg hover:bg-violet-50 transition">
                 View Projects
               </a>
             </div>
@@ -65,25 +63,25 @@ function App() {
       {/* About Section */}
       <section id="about" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gray-50 backdrop-blur-lg"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-50/50 to-purple/30"></div>
         <div className="container mx-auto px-6 relative">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2">
+          <div className="flex flex-col md:flex-row items-center gap-0 md:gap-3">
+            <div className="md:w-1/2 -mr-4">
               <img 
-                src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&q=80&w=500"
+                src={getShrituImageUrl()}
                 alt="Shruti"
-                className="rounded-lg shadow-lg"
+                className="rounded-lg shadow-lg w-72 h-72 object-cover"
               />
             </div>
-            <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold mb-6">About Me</h2>
-              <p className="text-gray-600 mb-4">
-                Hi, I'm Shruti, a curious and innovative computer science student with a passion for AI, machine learning, and backend development. I thrive on solving complex problems and believe that the right blend of creativity and technical expertise can create impactful solutions.
+            <div className="md:w-1/2 bg-white/20 backdrop-blur-md rounded-2xl p-8 border border-white/30 shadow-xl">
+              <h2 className="text-3xl font-bold mb-6 text-purple-900">About Me</h2>
+              <p className="text-gray-700 mb-4">
+                Hi, I'm Shruti, a curious and innovative computer science Graduate with a passion for AI, machine learning, and backend development. I thrive on solving complex problems and believe that the right blend of creativity and technical expertise can create impactful solutions.
               </p>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-700 mb-4">
                 I've had the opportunity to work on projects that showcase my skills in developing innovative applications, including participating in the Smart India Hackathon and contributing to unique ML-based solutions.
               </p>
-              <p className="text-gray-600">
+              <p className="text-gray-700">
                 When I'm not coding, you'll find me brainstorming new ideas, diving into tech communities, or crafting unique approaches to everyday challenges.
               </p>
             </div>
@@ -94,17 +92,17 @@ function App() {
       {/* Projects Section */}
       <section id="projects" className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center text-purple-900">Featured Projects</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-gray-600 mb-4">{project.description}</p>
                 <div className="flex gap-4">
-                  <a href={project.link} className="text-purple-600 hover:text-purple-700 flex items-center gap-1">
+                  <a href={project.link} className="text-purple-600 hover:text-purple-900 flex items-center gap-1">
                     <ExternalLink size={16} /> Demo
                   </a>
-                  <a href={project.github} className="text-purple-600 hover:text-purple-700 flex items-center gap-1">
+                  <a href={project.github} className="text-purple-600 hover:text-purple-900 flex items-center gap-1">
                     <Github size={16} /> Code
                   </a>
                 </div>
@@ -115,9 +113,9 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="bg-gray-50 py-20">
+      <section id="contact" className="bg-grey-50 py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">Get in Touch</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center text-purple-900">Get in Touch</h2>
           <div className="flex flex-col md:flex-row gap-12">
             <div className="md:w-1/2">
               <ContactForm />
@@ -144,7 +142,7 @@ function App() {
 
       {/* Footer */}
       <footer className="bg-white py-8">
-        <div className="container mx-auto px-6 text-center text-gray-600">
+        <div className="container mx-auto px-6 text-center text-purple-900">
           <p>© {new Date().getFullYear()} Shrutz_. All rights reserved.</p>
         </div>
       </footer>

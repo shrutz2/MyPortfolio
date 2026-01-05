@@ -1,9 +1,9 @@
 import emailjs from '@emailjs/browser';
 
 const emailConfig = {
-  publicKey: 'gSUZrcStx2KWpI7Eg',  // Replace with your actual public key
-  serviceId: 'service_0ghxgos',  // Replace with your actual service ID
-  templateId: 'template_j7ikbye',  // Replace with your actual template ID
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'gSUZrcStx2KWpI7Eg',
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_0ghxgos',
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_j7ikbye',
 };
  
 export default emailConfig;
